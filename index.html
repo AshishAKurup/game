@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>game</title>
     <link rel="shortcut icon" href="./icon.jpg" type="image/x-icon">
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url("./img1.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
         }
         
-        /* Style for the loader container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; 
+        }
+        
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .loader-container {
             position: fixed;
             top: 0;
@@ -27,45 +38,41 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999; /* Ensure loader is on top of other content */
+            z-index: 9999; 
         }
 
-        /* Style for the loader image */
         .loader-image {
             width: 250px;
             height: 250px;
-            /* Add any additional styling you need */
         }
     </style>
 </head>
 <body>
-    <!-- Loader container -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="./imgg.mp4" type="video/mp4">
+            
+        </video>
+    </div>
+
     <div class="loader-container">
-        <!-- Loader image -->
         <img class="loader-image" src="060d31d4d6edee071a2aa092a20b4512.gif" alt="Loader">
     </div>
 
-    <!-- Your page content goes here -->
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                
-                <!-- Your content -->
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap Bundle with Popper -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Simulate loading time and then show the content
         setTimeout(function() {
-            // Show the body
             document.body.style.visibility = 'visible';
-            // Hide the loader container
             document.querySelector('.loader-container').style.display = 'none';
-        }, 3000); // 3000 milliseconds = 3 seconds
+        }, 3000); 
     </script>
 </body>
 </html>
